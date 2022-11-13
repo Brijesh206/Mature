@@ -1,6 +1,7 @@
 package maturebot;
 
 import io.github.cdimascio.dotenv.Dotenv;
+import maturebot.commands.CommandRegistry;
 import net.dv8tion.jda.api.OnlineStatus;
 import net.dv8tion.jda.api.entities.Activity;
 import net.dv8tion.jda.api.requests.GatewayIntent;
@@ -26,13 +27,16 @@ public class MatureBot  {
                 GatewayIntent.GUILD_PRESENCES,
                 GatewayIntent.GUILD_MESSAGES,
                 GatewayIntent.GUILD_MESSAGE_REACTIONS
-        );
+                );
         builder.setMemberCachePolicy(MemberCachePolicy.ALL);
         builder.setChunkingFilter(ChunkingFilter.ALL);
         builder.enableCache(CacheFlag.ONLINE_STATUS);
         builder.setStatus(OnlineStatus.ONLINE);
         builder.setActivity(Activity.watching("Mature's Development!"));
         shardManager = builder.build();
+
+        // Register Listeners
+        shardManager.addEventListener(new CommandRegistry(this));
     }
 
     public Dotenv getConfig() {
