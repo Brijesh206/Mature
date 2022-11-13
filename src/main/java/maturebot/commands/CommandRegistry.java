@@ -2,6 +2,7 @@ package maturebot.commands;
 
 import maturebot.MatureBot;
 import maturebot.commands.data.GuildData;
+import maturebot.commands.staff.KickCommand;
 import maturebot.commands.utility.InviteCommand;
 import maturebot.util.embeds.EmbedUtils;
 import net.dv8tion.jda.api.Permission;
@@ -41,7 +42,8 @@ public class CommandRegistry extends ListenerAdapter {
     public CommandRegistry(MatureBot bot) {
         mapCommand(
                 // Commands to be registered
-                new InviteCommand(bot)
+                new InviteCommand(bot),
+                new KickCommand(bot)
 
         );
     }
