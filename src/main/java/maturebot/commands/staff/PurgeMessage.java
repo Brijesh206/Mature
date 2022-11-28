@@ -11,7 +11,12 @@ import net.dv8tion.jda.api.interactions.commands.OptionType;
 import net.dv8tion.jda.api.interactions.commands.build.OptionData;
 
 import java.util.List;
-import java.util.concurrent.TimeUnit;
+
+/**
+ * Command that deletes number of messages from the current channel.
+ *
+ * @author Brijesh
+ */
 
 public class PurgeMessage extends Command {
     public PurgeMessage(MatureBot bot) {
