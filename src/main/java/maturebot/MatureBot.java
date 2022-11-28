@@ -32,7 +32,7 @@ public class MatureBot  {
         builder.setChunkingFilter(ChunkingFilter.ALL);
         builder.enableCache(CacheFlag.ONLINE_STATUS);
         builder.setStatus(OnlineStatus.ONLINE);
-        builder.setActivity(Activity.watching("Mature's Development!"));
+        builder.setActivity(Activity.watching("Watching your activities!"));
         shardManager = builder.build();
 
         // Register Listeners
